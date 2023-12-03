@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Logo from "~/components/Logo";
 import SubmitDesign from "~/components/SubmitDesign";
 import UploadDesign from "~/components/UploadDesign";
 import { UploadButton, UploadDropzone } from "~/utils/uploadthing";
@@ -16,10 +17,11 @@ export default function Home() {
       </Head>
       <main>
         <div className="my-5 flex flex-col items-center justify-center">
-          <p>Logo goes here</p>
+          <Logo className="h-auto w-12 sm:w-20" />
+          <p>Upload your notes</p>
           <div className="w-3/4 md:w-1/2">
             <UploadDropzone
-              className="  ut-label:text-pink-600 ut-button:bg-pink-600 ut-button:hover:bg-pink-500 ut-button:after:bg-pink-500 ut-uploading:"
+              className="  ut-uploading: ut-button:bg-pink-600 ut-button:after:bg-pink-500 ut-button:hover:bg-pink-500 ut-label:text-pink-600"
               endpoint="imageUploader"
               onClientUploadComplete={(res) => {
                 // Do something with the response
